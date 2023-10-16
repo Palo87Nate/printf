@@ -1,37 +1,39 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include <stdio.h>
-#include <limits.h>
 #include <stdarg.h>
-#include <stddef.h>
-#include <stdlib.h>
-
-int _putchar(char c);
-int print_int(va_list arg);
-int print_unsigned(va_list arg);
-int _printf(const char *format, ...);
-int print_char(va_list arg);
-int print_str(va_list arg);
-int print_percent(void);
-void print_binary(unsigned int n, unsigned int *printed);
-int print_unsignedToBinary(va_list arg);
-int print_oct(va_list arg);
-int print_unsignedIntToHex(unsigned int num, char _case);
-int print_hex_base(va_list arg, char _case);
-int print_hex(va_list arg);
-int print_HEX(va_list arg);
-int print_STR(va_list arg);
-
 /**
- * struct identifierStruct - structure definition of a printTypeStruct
- * @indentifier: type
- * @printer: function to print
+ * struct mystr - pointer to function with corresponding letter
+ * @letter: specifier
+ * @func: print argument
  */
-
-typedef struct identifierStruct
+typedef struct mystr
 {
-char *indentifier;
-int (*printer)(va_list);
-} identifierStruct;
+	char *letter;
+	int (*func)(va_list);
+} mystr;
+int _putchar(char c);
+int _printf(const char *format, ...);
+int(*getspecifier(const char *format, int i))(va_list);
+/** fn in file : fn_char.c */
+int print_c(va_list c);
+int print_s(va_list s);
+int print_S(va_list S);
+int print_rs(va_list rs);
+int print_rot(va_list ro);
+/** fn in file : fn_numbers.c */
+int _print_i(va_list vi);
+int _print_b(va_list b);
+/** fn in file : fn_uoxX.c */
+int _print_u(va_list);
+int _print_o(va_list);
+int _print_x(va_list);
+int _print_X(va_list);
+int _print_p(va_list);
 
+int strange(const char *format, int i);
+int _plus_i(va_list);
+int _space_i(va_list);
+int _diez_o(va_list);
+int _diez_x(va_list);
+int _diez_X(va_list);
 #endif
