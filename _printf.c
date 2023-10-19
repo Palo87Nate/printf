@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include "main.h"
+#include "holberton.h"
 
 /**
  * _printf - prints outputs
